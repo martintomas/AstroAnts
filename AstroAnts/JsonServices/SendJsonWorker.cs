@@ -2,19 +2,11 @@
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using AstroAnts.JsonServices.DataModels;
 using Newtonsoft.Json;
 
 namespace AstroAnts.JsonServices
 {
-    public class AntResponse
-    {
-        public AntResponse(string path)
-        {
-            this.path = path;
-        }
-
-        public string path { get; set; }
-    }
 
     public class SendJsonWorker
     {
@@ -37,14 +29,14 @@ namespace AstroAnts.JsonServices
             return readStream.ReadToEnd();
         }
 
-        public string SendJsonFile(string url, string path)
+        public ResponseAntModel SendJsonFile(string url, string path)
         {
-            var jsonOutput = JsonConvert.SerializeObject(new AntResponse(path));
+            var jsonOutput = JsonConvert.SerializeObject(new RequestAntModel(path));
 
             var sendFile = SendJsonFileAsync(url, jsonOutput);
 
             sendFile.Wait();
-            return sendFile.Result;
+            return JsonConvert.DeserializeObject<ResponseAntModel>(sendFile.Result);
         }
     }
 }

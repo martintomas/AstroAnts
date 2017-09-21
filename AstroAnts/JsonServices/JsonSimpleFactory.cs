@@ -22,12 +22,17 @@ namespace AstroAnts.JsonServices
             }
         }
 
-        public static string SendJsonResponse(JsonTypes jsonType, string id, string path, string url = "")
+        public static ResponseAntModel SendJsonResponse(JsonTypes jsonType, string id, string path, string url = "")
         {
             switch (jsonType)
             {
                 case JsonTypes.TEST:
-                    return path == "DLDRRU" ? "Test OK" : "Test Failed";
+                    return new ResponseAntModel
+                    {
+                        InTime = true,
+                        Valid = (path == "DLDRRU"),
+                        Message = (path == "DLDRRU" ? "Test OK" : "Test Failed")
+                    };
                 case JsonTypes.API_QUADIENT:
                     url = string.Format("http://tasks-rad.quadient.com:8080/task/{0}", id);
                     return new SendJsonWorker().SendJsonFile(url, path);

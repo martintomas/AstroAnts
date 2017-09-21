@@ -6,9 +6,6 @@ namespace AstroAnts.JsonServices.DataModels
 {
     public class AntModel
     {
-        private AntModel()
-        {
-        }
 
         public string Id { get; set; }
         public long StartedTimestamp { get; set; }
