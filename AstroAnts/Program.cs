@@ -1,12 +1,15 @@
 ﻿using System;
+using astroAnts.Enumerators;
 
-namespace AstroAnts
+namespace astroAnts
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            SimpleFacade.runAntQuest(JsonTypes.API_QUADIENT, PathAlgorithms.ASTAR_MANHATTAN, true);
+
+            Console.ReadLine();
         }
     }
 }
