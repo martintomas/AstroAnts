@@ -3,6 +3,7 @@
     public enum JsonTypes
     {
         TEST,
-        API_QUADIENT
+        API_QUADIENT,
+        URL,
     }
 }

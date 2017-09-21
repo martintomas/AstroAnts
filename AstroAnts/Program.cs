@@ -9,6 +9,8 @@ namespace AstroAnts
         {
             SimpleFacade.RunAntQuest(JsonTypes.API_QUADIENT, PathAlgorithms.ASTAR_MANHATTAN, true);
 
+            SimpleFacade.RunAntQuest(JsonTypes.TEST, PathAlgorithms.ASTAR_MANHATTAN, true);
+
             Console.ReadLine();
         }
     }

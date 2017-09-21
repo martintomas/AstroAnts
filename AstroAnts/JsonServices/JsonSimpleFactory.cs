@@ -15,8 +15,9 @@ namespace AstroAnts.JsonServices
                     return JsonConvert.DeserializeObject<AntModel>(new TestJsonWorker().GetJsonFile(url));
                 case JsonTypes.API_QUADIENT:
                     url = "http://tasks-rad.quadient.com:8080/task";
-                    var ant = JsonConvert.DeserializeObject<AntModel>(new ReceiveJsonWorker().GetJsonFile(url));
-                    return ant;
+                    return JsonConvert.DeserializeObject<AntModel>(new ReceiveJsonWorker().GetJsonFile(url));
+                case JsonTypes.URL:
+                    return JsonConvert.DeserializeObject<AntModel>(new ReceiveJsonWorker().GetJsonFile(url));
                 default:
                     throw new Exception("Unknown source of JSON file");
             }
@@ -35,6 +36,9 @@ namespace AstroAnts.JsonServices
                     };
                 case JsonTypes.API_QUADIENT:
                     url = string.Format("http://tasks-rad.quadient.com:8080/task/{0}", id);
+                    return new SendJsonWorker().SendJsonFile(url, path);
+                case JsonTypes.URL:
+                    url = string.Format(url + "/" + id);
                     return new SendJsonWorker().SendJsonFile(url, path);
                 default:
                     throw new Exception("Unknown url for JSON reponse");

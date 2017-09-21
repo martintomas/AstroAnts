@@ -10,7 +10,7 @@ namespace AstroAnts
 {
     public static class SimpleFacade
     {
-        public static void RunAntQuest(JsonTypes jsonWorker, PathAlgorithms pathAlgorithm, bool DEBUG)
+        public static void RunAntQuest(JsonTypes jsonWorker, PathAlgorithms pathAlgorithm, bool DEBUG, string url = "")
         {
  
             try
@@ -20,7 +20,7 @@ namespace AstroAnts
 
                 Console.WriteLine("Running ANT QUEST for {0} and {1}", jsonWorker, pathAlgorithm);
 
-                AntModel antModel = JsonSimpleFactory.GetJsonData(jsonWorker);
+                AntModel antModel = JsonSimpleFactory.GetJsonData(jsonWorker, url);
                 if (DEBUG) Console.WriteLine("Obtaining data took: {0} ms", sw.Elapsed.Milliseconds);
 
                 sw.Restart();
@@ -40,7 +40,7 @@ namespace AstroAnts
                 sw.Restart();
 
                 var serverResponse =
-                    JsonSimpleFactory.SendJsonResponse(jsonWorker, antGraph.ID, pathString);
+                    JsonSimpleFactory.SendJsonResponse(jsonWorker, antGraph.ID, pathString, url);
                 Console.WriteLine(serverResponse.Message);
 
                 if (serverResponse.Valid && serverResponse.InTime && DEBUG) Console.WriteLine("Test passed");
