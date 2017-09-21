@@ -1,6 +1,6 @@
-﻿using astroAnts.Graphs;
+﻿using AstroAnts.Graphs;
 
-namespace astroAnts.PathManipulation.ComparerHeuristics
+namespace AstroAnts.PathManipulation.ComparerHeuristics
 {
     internal class HeuristicComparerSimple : AHeuristicComparer
     {

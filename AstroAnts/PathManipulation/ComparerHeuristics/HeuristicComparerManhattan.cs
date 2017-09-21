@@ -1,7 +1,7 @@
 ﻿using System;
-using astroAnts.Graphs;
+using AstroAnts.Graphs;
 
-namespace astroAnts.PathManipulation.ComparerHeuristics
+namespace AstroAnts.PathManipulation.ComparerHeuristics
 {
     public class HeuristicComparerManhattan : AHeuristicComparer
     {

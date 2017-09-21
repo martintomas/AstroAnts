@@ -1,8 +1,9 @@
 ﻿using System;
-using astroAnts.Enumerators;
+using AstroAnts.Enumerators;
+using AstroAnts.JsonServices.DataModels;
 using Newtonsoft.Json;
 
-namespace astroAnts.JsonServices
+namespace AstroAnts.JsonServices
 {
     internal class JsonSimpleFactory
     {

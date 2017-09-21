@@ -1,4 +1,4 @@
-﻿namespace astroAnts.JsonServices
+﻿namespace AstroAnts.JsonServices
 {
     public interface IJsonWorker
     {

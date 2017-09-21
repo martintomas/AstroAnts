@@ -1,7 +1,8 @@
 ﻿using System;
-using astroAnts.JsonServices;
+using AstroAnts.JsonServices;
+using AstroAnts.JsonServices.DataModels;
 
-namespace astroAnts.Graphs
+namespace AstroAnts.Graphs
 {
     public class Graph // can be used as decorator for antmodel
     {

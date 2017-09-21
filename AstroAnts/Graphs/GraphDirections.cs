@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace astroAnts.Graphs
+namespace AstroAnts.Graphs
 {
     public class GraphDirections
     {

@@ -1,8 +1,8 @@
-﻿using astroAnts.Graphs;
-using astroAnts.PathManipulation.ComparerHeuristics;
-using astroAnts.Services;
+﻿using AstroAnts.Graphs;
+using AstroAnts.PathManipulation.ComparerHeuristics;
+using AstroAnts.Services;
 
-namespace astroAnts.PathManipulation
+namespace AstroAnts.PathManipulation
 {
     public class PathFinderAStar : APathFinder
     {

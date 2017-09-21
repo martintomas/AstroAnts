@@ -1,6 +1,6 @@
-﻿using astroAnts.Graphs;
+﻿using AstroAnts.Graphs;
 
-namespace astroAnts.PathManipulation
+namespace AstroAnts.PathManipulation
 {
     public struct PathFinderResult
     {

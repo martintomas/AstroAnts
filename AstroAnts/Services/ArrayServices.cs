@@ -1,4 +1,4 @@
-﻿namespace astroAnts.Services
+﻿namespace AstroAnts.Services
 {
     internal class ArrayServices
     {

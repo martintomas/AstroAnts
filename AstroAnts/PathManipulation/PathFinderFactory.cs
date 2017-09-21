@@ -1,9 +1,9 @@
 ﻿using System;
-using astroAnts.Enumerators;
-using astroAnts.Graphs;
-using astroAnts.PathManipulation.ComparerHeuristics;
+using AstroAnts.Enumerators;
+using AstroAnts.Graphs;
+using AstroAnts.PathManipulation.ComparerHeuristics;
 
-namespace astroAnts.PathManipulation
+namespace AstroAnts.PathManipulation
 {
     public class PathFinderFactory
     {

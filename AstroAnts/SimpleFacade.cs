@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
-using astroAnts.Enumerators;
-using astroAnts.Graphs;
-using astroAnts.JsonServices;
-using astroAnts.PathManipulation;
+using AstroAnts.Enumerators;
+using AstroAnts.Graphs;
+using AstroAnts.JsonServices;
+using AstroAnts.JsonServices.DataModels;
+using AstroAnts.PathManipulation;
 
-namespace astroAnts
+namespace AstroAnts
 {
     public static class SimpleFacade
     {

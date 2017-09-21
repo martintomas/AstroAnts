@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
-using astroAnts.Graphs;
+using AstroAnts.Graphs;
 
-namespace astroAnts.PathManipulation.ComparerHeuristics
+namespace AstroAnts.PathManipulation.ComparerHeuristics
 {
     public class HeuristicComparerManhattanOriented : AHeuristicComparer
     {

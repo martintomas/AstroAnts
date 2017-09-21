@@ -1,4 +1,4 @@
-﻿namespace astroAnts.Graphs
+﻿namespace AstroAnts.Graphs
 {
     public class GraphNodeDecorator : IGraphNode
     {

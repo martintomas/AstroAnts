@@ -1,7 +1,7 @@
 ﻿using System;
-using astroAnts.Enumerators;
+using AstroAnts.Enumerators;
 
-namespace astroAnts
+namespace AstroAnts
 {
     internal class Program
     {

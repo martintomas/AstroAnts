@@ -1,7 +1,7 @@
 ﻿using System.Text;
-using astroAnts.Graphs;
+using AstroAnts.Graphs;
 
-namespace astroAnts.PathManipulation
+namespace AstroAnts.PathManipulation
 {
     public abstract class APathFinder
     {

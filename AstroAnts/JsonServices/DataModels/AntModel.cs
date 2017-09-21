@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using astroAnts.Graphs;
+using AstroAnts.Graphs;
 
-namespace astroAnts.JsonServices
+namespace AstroAnts.JsonServices.DataModels
 {
     public class AntModel
     {

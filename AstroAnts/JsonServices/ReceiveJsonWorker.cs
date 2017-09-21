@@ -2,7 +2,7 @@
 using System.Net;
 using System.Threading.Tasks;
 
-namespace astroAnts.JsonServices
+namespace AstroAnts.JsonServices
 {
     public class ReceiveJsonWorker : IJsonWorker
     {

@@ -1,4 +1,4 @@
-﻿namespace astroAnts.Enumerators
+﻿namespace AstroAnts.Enumerators
 {
     public enum JsonTypes
     {

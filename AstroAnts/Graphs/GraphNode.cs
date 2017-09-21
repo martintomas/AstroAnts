@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace astroAnts.Graphs
+namespace AstroAnts.Graphs
 {
     public class GraphNode : IGraphNode
     {
