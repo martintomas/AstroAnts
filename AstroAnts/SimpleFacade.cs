@@ -10,7 +10,7 @@ namespace AstroAnts
 {
     public static class SimpleFacade
     {
-        public static void runAntQuest(JsonTypes jsonWorker, PathAlgorithms pathAlgorithm, bool DEBUG)
+        public static void RunAntQuest(JsonTypes jsonWorker, PathAlgorithms pathAlgorithm, bool DEBUG)
         {
  
             try
