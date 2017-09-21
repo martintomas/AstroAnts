@@ -39,7 +39,7 @@ namespace astroAnts
                 sw.Restart();
 
                 var serverResponse =
-                    JsonSimpleFactory.SendJsonResponse(JsonTypes.API_QUADIENT, antGraph.ID, pathString);
+                    JsonSimpleFactory.SendJsonResponse(jsonWorker, antGraph.ID, pathString);
                 if (DEBUG) Console.WriteLine("Sending data took: {0} ms", sw.Elapsed.Milliseconds);
 
                 Console.WriteLine(serverResponse);
