@@ -11,13 +11,24 @@ namespace AstroAnts.Services
         private readonly Dictionary<T, int> _contains
             ; // slow increase of memory (reference of nodes is kept at two places), but contain atd. operations takes O(1) time
 
+        public PriorityQueue(int capacity)
+        {
+            Comparer = Comparer<T>.Default;
+            EqualityComparer = EqualityComparer<T>.Default;
+            Data = new T[capacity];
+            Count = 0;
+            _contains = new Dictionary<T, int>(EqualityComparer);
+
+            _capacity = capacity;
+        }
+
         public PriorityQueue(int capacity, IComparer<T> comparer, IEqualityComparer<T> equalityComparer)
         {
             Comparer = comparer;
             EqualityComparer = equalityComparer;
             Data = new T[capacity];
             Count = 0;
-            _contains = new Dictionary<T, int>(equalityComparer);
+            _contains = new Dictionary<T, int>(EqualityComparer);
 
             _capacity = capacity;
         }
@@ -32,7 +43,7 @@ namespace AstroAnts.Services
             if (_capacity == Count) IncreaseArray();
 
             Data[Count] = item; // store item at last place
-            _contains.Add(item, Count - 1); // add to hash set
+            _contains.Add(item, Count); // add to hash set
             Count++;
 
             //PrintData("Add before");
@@ -45,13 +56,7 @@ namespace AstroAnts.Services
             return _contains.ContainsKey(item);
         }
 
-        public void ReorderQueue()
-        {
-            Swap(0, Count - 1);
-            MoveDown(0);
-        }
-
-        public void MoveUp(int position)
+        private void MoveUp(int position)
         {
             while (position > 0 && Comparer.Compare(Data[(position - 1) / 2], Data[position]) == 1
             ) // switch if parent is bigger
@@ -62,7 +67,7 @@ namespace AstroAnts.Services
             }
         }
 
-        public void MoveDown(int position)
+        private void MoveDown(int position)
         {
             // binary tree -> two childrens
             var lchild = 2 * position + 1;
@@ -84,10 +89,10 @@ namespace AstroAnts.Services
 
         public void UpdateDistance(T item)
         {
-            MoveUp(_contains[item]);
+            if(Contains(item)) MoveUp(_contains[item]);
         }
 
-        public void Swap(int position1, int position2)
+        private  void Swap(int position1, int position2)
         {
             _contains[Data[position1]] = position2;
             _contains[Data[position2]] = position1;
@@ -100,6 +105,7 @@ namespace AstroAnts.Services
         public T ExtractMin(bool ignoreReordering = false) // !!removes min value
         {
             //PrintData("Data");
+            if (Count == 0) throw new IndexOutOfRangeException();
 
             var item = Data[0]; // obtain first
             Swap(0, Count - 1); //move first to last
@@ -109,6 +115,13 @@ namespace AstroAnts.Services
             _contains.Remove(item);
 
             return item;
+        }
+
+        public T[] GetData()
+        {
+            T[] res = new T[Count];
+            Array.Copy(Data, 0, res, 0, Count);
+            return res;
         }
 
         private void IncreaseArray(int multiply = 2)

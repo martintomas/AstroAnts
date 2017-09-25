@@ -1,6 +1,6 @@
 ﻿namespace AstroAnts.Services
 {
-    internal class ArrayServices
+    public class ArrayServices
     {
         public static void InitializeArrayValue<T>(T[] arr, T val)
         {
