@@ -18,6 +18,9 @@ namespace AstroAnts.JsonServices
                     return JsonConvert.DeserializeObject<AntModel>(new ReceiveJsonWorker().GetJsonFile(url));
                 case JsonTypes.URL:
                     return JsonConvert.DeserializeObject<AntModel>(new ReceiveJsonWorker().GetJsonFile(url));
+                case JsonTypes.FILE:
+                    url = @"U:\z.obst\apiary\task1000.json";
+                    return JsonConvert.DeserializeObject<AntModel>(new ReceiveJsonFile().GetJsonFile(url));
                 default:
                     throw new Exception("Unknown source of JSON file");
             }

@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using AstroAnts.Graphs;
 
 namespace AstroAnts.PathManipulation
@@ -19,17 +20,20 @@ namespace AstroAnts.PathManipulation
             IGraphNode start = Graph.EndNode;
             var sb = new StringBuilder();
             var pathValue = 0;
+            var pathNum = 0;
 
             if (pathResult.Path != null)
                 while (start != Graph.StartNode)
                 {
                     pathValue += start.NodeValue;
+                    pathNum++;
 
                     sb.Insert(0, pathResult.PathDirections[start.NodeCode]); //add at begginig
                     start = pathResult.Path[start.NodeCode];
                 }
 
-            //Console.WriteLine(pathValue);
+            Console.WriteLine("Path value is "+pathValue);
+            Console.WriteLine("Number of steps is "+pathNum);
 
             return sb.ToString();
         }

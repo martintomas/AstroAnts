@@ -5,5 +5,6 @@
         TEST,
         API_QUADIENT,
         URL,
+        FILE,
     }
 }

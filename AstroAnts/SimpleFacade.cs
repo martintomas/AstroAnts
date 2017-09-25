@@ -39,12 +39,15 @@ namespace AstroAnts
 
                 sw.Restart();
 
-                var serverResponse =
-                    JsonSimpleFactory.SendJsonResponse(jsonWorker, antGraph.ID, pathString, url);
-                Console.WriteLine(serverResponse.Message);
+                if (jsonWorker != JsonTypes.FILE)
+                {
+                    var serverResponse =
+                        JsonSimpleFactory.SendJsonResponse(jsonWorker, antGraph.ID, pathString, url);
+                    Console.WriteLine(serverResponse.Message);
 
-                if (serverResponse.Valid && serverResponse.InTime && DEBUG) Console.WriteLine("Test passed");
-                else if(DEBUG) Console.WriteLine("Test failed");
+                    if (serverResponse.Valid && serverResponse.InTime && DEBUG) Console.WriteLine("Test passed");
+                    else if (DEBUG) Console.WriteLine("Test failed");
+                }
 
                 if (DEBUG) Console.WriteLine("Sending data took: {0} ms", sw.Elapsed.Milliseconds);
 
