@@ -39,7 +39,7 @@ namespace AstroAnts
 
                 sw.Restart();
 
-                if (jsonWorker != JsonTypes.FILE)
+                if (jsonWorker == JsonTypes.TEST || jsonWorker == JsonTypes.URL || jsonWorker == JsonTypes.API_QUADIENT)
                 {
                     var serverResponse =
                         JsonSimpleFactory.SendJsonResponse(jsonWorker, antGraph.ID, pathString, url);
